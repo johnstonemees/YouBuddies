@@ -10,8 +10,6 @@ import android.content.Context;
  */
 public class CommonApplication extends Application {
     private Context context;
-    private speechSynthesizer mTts;
-    private speechRecognizer mAsr;
     @Override
     public void onCreate() {
         super.onCreate();
@@ -29,11 +27,6 @@ public class CommonApplication extends Application {
     public void onTerminate() {
         super.onTerminate();
         //释放语音资源
-        if(mTts!=null) {
-            mTts.destroy();
-        }
-        if(mAsr!=null) {
-            mAsr.destroy();
-        }
+
     }
 }
